@@ -9,7 +9,7 @@ const int AIR = 0;
 const int STUN = 1;
 const int POLYMORPH =2;
 const int INVINCIBLE = 3;
-//const를 붙여 수정할 수 없도록 안전성을 높임.
+//const를 붙여 수정할 수 없도록 안전성을 높임
 
 int main()
 {
