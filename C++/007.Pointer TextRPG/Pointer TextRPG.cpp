@@ -9,9 +9,9 @@ struct StatInfo
 };
 
 void EnterLobby();
-StatInfo CreatePlayer();                // Æ÷ÀÎÅÍ »ç¿ë X
-void CreateMonster(StatInfo* Info);     // Æ÷ÀÎÅÍ »ç¿ë O
-bool StartBattle(StatInfo* player, StatInfo* monster);  //ÇÃ·¹ÀÌ¾î°¡ ½Â¸®½Ã true, ÆĞ¹è½Ã false
+StatInfo CreatePlayer();                // í¬ì¸í„° ì‚¬ìš© X
+void CreateMonster(StatInfo* Info);     // í¬ì¸í„° ì‚¬ìš© O
+bool StartBattle(StatInfo* player, StatInfo* monster);  //í”Œë ˆì´ì–´ê°€ ìŠ¹ë¦¬ì‹œ true, íŒ¨ë°°ì‹œ false
 
 int main()
 {
@@ -25,66 +25,66 @@ int main()
 
 void EnterLobby()
 {
-    cout << "·Îºñ¿¡ ÀÔÀåÇß½À´Ï´Ù\n";
+    cout << "ë¡œë¹„ì— ì…ì¥í–ˆìŠµë‹ˆë‹¤\n";
 
     StatInfo player;
 
-    // ÀÓ½Ã·Î player¿¡ ¾²·¹±â°ªÀ» ³ÖÀ½.
+    // ì„ì‹œë¡œ playerì— ì“°ë ˆê¸°ê°’ì„ ë„£ìŒ.
     player.hp = 0xbbbbbbbb;
     player.attack = 0xbbbbbbbb;
     player.defence = 0xbbbbbbbb;
 
-    player = CreatePlayer(); //ÇÃ·¹ÀÌ¾î Á¤º¸¸¦ ¸®ÅÏ ¹ŞÀ½
+    player = CreatePlayer(); //í”Œë ˆì´ì–´ ì •ë³´ë¥¼ ë¦¬í„´ ë°›ìŒ
 
-    // ÄÄÆÄÀÏ·¯°¡ ¸Ş¸ğ¸®¿¡¼­ ÇÏ´Â ÀÛ¾÷.
-    // [¸Å°³º¯¼ö(temp)][¹İÈ¯°ª][Áö¿ªº¯¼ö(ret)]
-    // ¸Ş¸ğ¸®¿¡¼­ ÀÓ½Ã·Î ¸Å°³º¯¼ö &temp(¾²·¹±â °ªÀ» °¡Áü.)¸¦ »ı¼ºÇÔ.
-    // ÇÔ¼ö¿¡¼­ Áö¿ª º¯¼ö ret(100, 10, 2) °ªÀ» °¡Áü.
-    // Áö¿ª º¯¼ö retÀÇ °ªÀ» ¸Å°³º¯¼ö temp·Î ¿Å°Ü ¹ŞÀ½.
-    // ÇÔ¼ö ¹ÛÀ¸·Î ³ª¿À¸é¼­ ¸Å°³º¯¼ö temp¿¡¼­ °ªÀ» °¡Á®¿Í¼­ player¿¡ ¿Å°ÜÁü.
-    // »ç½Ç»ó StatInfo temp = CreatePlayer();
-    // player = temp;¸¦ ÇÏ°í ÀÖ´Â ¼À.
-    // Áö¿ªº¯¼ö(ret) -> ¸Å°³º¯¼ö(temp) -> º¯¼ö(player)
-    // ¼ö¹é°³ÀÇ ¸â¹öº¯¼ö°¡ ÀÖ´Ù¸é »ó´çÇÑ ¸Ş¸ğ¸® ³¶ºñ¸¦ ¾ß±â ÇÒ ¼ö ÀÖ´Ù.
+    // ì»´íŒŒì¼ëŸ¬ê°€ ë©”ëª¨ë¦¬ì—ì„œ í•˜ëŠ” ì‘ì—….
+    // [ë§¤ê°œë³€ìˆ˜(temp)][ë°˜í™˜ê°’][ì§€ì—­ë³€ìˆ˜(ret)]
+    // ë©”ëª¨ë¦¬ì—ì„œ ì„ì‹œë¡œ ë§¤ê°œë³€ìˆ˜ &temp(ì“°ë ˆê¸° ê°’ì„ ê°€ì§.)ë¥¼ ìƒì„±í•¨.
+    // í•¨ìˆ˜ì—ì„œ ì§€ì—­ ë³€ìˆ˜ ret(100, 10, 2) ê°’ì„ ê°€ì§.
+    // ì§€ì—­ ë³€ìˆ˜ retì˜ ê°’ì„ ë§¤ê°œë³€ìˆ˜ tempë¡œ ì˜®ê²¨ ë°›ìŒ.
+    // í•¨ìˆ˜ ë°–ìœ¼ë¡œ ë‚˜ì˜¤ë©´ì„œ ë§¤ê°œë³€ìˆ˜ tempì—ì„œ ê°’ì„ ê°€ì ¸ì™€ì„œ playerì— ì˜®ê²¨ì§.
+    // ì‚¬ì‹¤ìƒ StatInfo temp = CreatePlayer();
+    // player = temp;ë¥¼ í•˜ê³  ìˆëŠ” ì…ˆ.
+    // ì§€ì—­ë³€ìˆ˜(ret) -> ë§¤ê°œë³€ìˆ˜(temp) -> ë³€ìˆ˜(player)
+    // ìˆ˜ë°±ê°œì˜ ë©¤ë²„ë³€ìˆ˜ê°€ ìˆë‹¤ë©´ ìƒë‹¹í•œ ë©”ëª¨ë¦¬ ë‚­ë¹„ë¥¼ ì•¼ê¸° í•  ìˆ˜ ìˆë‹¤.
 
     StatInfo monster;
 
-    // ÀÓ½Ã·Î monster¿¡ ¾²·¹±â°ªÀ» ³ÖÀ½.
+    // ì„ì‹œë¡œ monsterì— ì“°ë ˆê¸°ê°’ì„ ë„£ìŒ.
     monster.hp = 0xbbbbbbbb;
     monster.attack = 0xbbbbbbbb;
     monster.defence = 0xbbbbbbbb;
 
-    CreateMonster(&monster); //monsterÀÇ ÁÖ¼Ò¸¦ º¸³» ÇÔ¼ö¿¡¼­ ¼¼ÆÃµÊ.
+    CreateMonster(&monster); //monsterì˜ ì£¼ì†Œë¥¼ ë³´ë‚´ í•¨ìˆ˜ì—ì„œ ì„¸íŒ…ë¨.
 
-    // ÄÄÆÄÀÏ·¯°¡ ¸Ş¸ğ¸®¿¡¼­ ÇÏ´Â ÀÛ¾÷
-    // ½ºÅÃ¿¡ monster ½ÃÀÛ ÁÖ¼Ò(hp)¸¦ ½ºÅÃ¿¡ ÀúÀåÇÔ.
-    // ÇÔ¼ö¿¡¼­ hp´Â ½ÃÀÛ ÁÖ¼ÒÀÇ ¸Ş¸ğ¸®¿¡¼­ Á÷Á¢ÀûÀ¸·Î °ªÀ» ³ÖÀ½.
-    // attackÀº hpÀÇ ÁÖ¼Ò + 4(int)ÀÇ ¸Ş¸ğ¸®¿¡ Á÷Á¢ÀûÀ¸·Î °ªÀ» ³ÖÀ½.
-    // defence´Â hpÀÇ ÁÖ¼Ò + 8(attack + 4)ÀÇ ¸Ş¸ğ¸®¿¡ Á÷Á¢ÀûÀ¸·Î °ªÀ» ³ÖÀ½.
-    // ¸â¹öº¯¼ö°¡ ¸¹¾Æµµ ¸Ş¸ğ¸® ³¶ºñ°¡ ÀûÀ½.
+    // ì»´íŒŒì¼ëŸ¬ê°€ ë©”ëª¨ë¦¬ì—ì„œ í•˜ëŠ” ì‘ì—…
+    // ìŠ¤íƒì— monster ì‹œì‘ ì£¼ì†Œ(hp)ë¥¼ ìŠ¤íƒì— ì €ì¥í•¨.
+    // í•¨ìˆ˜ì—ì„œ hpëŠ” ì‹œì‘ ì£¼ì†Œì˜ ë©”ëª¨ë¦¬ì—ì„œ ì§ì ‘ì ìœ¼ë¡œ ê°’ì„ ë„£ìŒ.
+    // attackì€ hpì˜ ì£¼ì†Œ + 4(int)ì˜ ë©”ëª¨ë¦¬ì— ì§ì ‘ì ìœ¼ë¡œ ê°’ì„ ë„£ìŒ.
+    // defenceëŠ” hpì˜ ì£¼ì†Œ + 8(attack + 4)ì˜ ë©”ëª¨ë¦¬ì— ì§ì ‘ì ìœ¼ë¡œ ê°’ì„ ë„£ìŒ.
+    // ë©¤ë²„ë³€ìˆ˜ê°€ ë§ì•„ë„ ë©”ëª¨ë¦¬ ë‚­ë¹„ê°€ ì ìŒ.
 
-    /* ±¸Á¶Ã¼³¢¸® º¹»çÇÒ ¶§ ¾î¶»°Ô º¹»ç ÇÒ±î */
+    /* êµ¬ì¡°ì²´ë¼ë¦¬ ë³µì‚¬í•  ë•Œ ì–´ë–»ê²Œ ë³µì‚¬ í• ê¹Œ */
     // player = monster;
-    // monsterÀÇ ÁÖ¼Ò¸¦ eax(·¹Áö½ºÅÍ)¿¡ ÀúÀå
-    // eaxÀÇ °ªÀ» player ÁÖ¼ÒÀÇ °ª¿¡ ³ÖÀ½.
+    // monsterì˜ ì£¼ì†Œë¥¼ eax(ë ˆì§€ìŠ¤í„°)ì— ì €ì¥
+    // eaxì˜ ê°’ì„ player ì£¼ì†Œì˜ ê°’ì— ë„£ìŒ.
     // player.hp = monster.hp
-    // ÀÌ¿Í °°Àº ÀÛ¾÷À» ¹İº¹ÇÔ.
-    // »ç½Ç»ó player.hp = monster.hp
+    // ì´ì™€ ê°™ì€ ì‘ì—…ì„ ë°˜ë³µí•¨.
+    // ì‚¬ì‹¤ìƒ player.hp = monster.hp
     // player.attack = monster.attack
     // player.defence = monster.defence
-    // ¸â¹öº¯¼ö°¡ ¸¹À»¼ö·Ï ¸Ş¸ğ¸® ³¶ºñ°¡ µÉ ¼ö ÀÖÀ½.
+    // ë©¤ë²„ë³€ìˆ˜ê°€ ë§ì„ìˆ˜ë¡ ë©”ëª¨ë¦¬ ë‚­ë¹„ê°€ ë  ìˆ˜ ìˆìŒ.
 
     bool victory = StartBattle(&player, &monster);
 
     if (victory)
-        cout << "½Â¸®!\n";
+        cout << "ìŠ¹ë¦¬!\n";
     else
-        cout << "ÆĞ¹è\n";
+        cout << "íŒ¨ë°°\n";
 }
 
 StatInfo CreatePlayer()
 {
-    StatInfo ret; //¹İÈ¯ÇØÁà¾ßÇÒ StatInfo ±¸Á¶Ã¼Çü
+    StatInfo ret; //ë°˜í™˜í•´ì¤˜ì•¼í•  StatInfo êµ¬ì¡°ì²´í˜•
 
     ret.hp = 100;
     ret.attack = 10;
@@ -95,7 +95,7 @@ StatInfo CreatePlayer()
 
 void CreateMonster(StatInfo *Info)
 {
-    cout << "¸ó½ºÅÍ »ı¼º\n";
+    cout << "ëª¬ìŠ¤í„° ìƒì„±\n";
 
     Info->hp = 40;
     Info->attack = 8;
@@ -114,22 +114,22 @@ bool StartBattle(StatInfo* player, StatInfo* monster)
         if (monster->hp < 0)
             monster->hp = 0;
         
-        cout<< "¸ó½ºÅÍ HP : " << monster->hp << "\n";
+        cout<< "ëª¬ìŠ¤í„° HP : " << monster->hp << "\n";
 
         if (monster->hp == 0)
-            return true; //ÇÃ·¹ÀÌ¾î ½Â¸®
+            return true; //í”Œë ˆì´ì–´ ìŠ¹ë¦¬
         
         damage = monster->attack - player->defence;
         if (damage < 0)
             damage = 0;
         
-        cout << "ÇÃ·¹ÀÌ¾î HP : " << player->hp << "\n";
+        cout << "í”Œë ˆì´ì–´ HP : " << player->hp << "\n";
 
         player->hp -= damage;
         if (player->hp < 0)
             player->hp = 0;
         
         if (player->hp == 0)
-            return false; //ÇÃ·¹ÀÌ¾î ÆĞ¹è 
+            return false; //í”Œë ˆì´ì–´ íŒ¨ë°° 
     }
 }
