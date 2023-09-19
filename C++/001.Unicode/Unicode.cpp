@@ -4,15 +4,15 @@ using namespace std;
 int main()
 {
     char ch = 'a';
-    // wchar_t wch = L'¾È';
-    // ÀÎÄÚµùÀÌ UFT-8 or UFT-16ÀÌ¿©¾ßÇÔ.
-    // ¹®ÀÚ¾Õ¿¡ L¸¦ ºÙ¿©Áà¾ßÇÔ
+    // wchar_t wch = L'ì•ˆ';
+    // ì¸ì½”ë”©ì´ UFT-8 or UFT-16ì´ì—¬ì•¼í•¨.
+    // ë¬¸ìì•ì— Lë¥¼ ë¶™ì—¬ì¤˜ì•¼í•¨
 
     cout << ch << endl;
-    // cout´Â char Àü¿ë
+    // coutëŠ” char ì „ìš©
 
     // wcout.imbue(locale("kor"));
-    //  À¯´ÏÄÚµå¿¡¼­ ÇÑ±¹¾î¶ó´Â ÀÎ½Ä½ÃÅ´
+    //  ìœ ë‹ˆì½”ë“œì—ì„œ í•œêµ­ì–´ë¼ëŠ” ì¸ì‹ì‹œí‚´
     // wcout << wch << endl;
 
     return 0;
