@@ -1,36 +1,36 @@
 #include <istream>
 using namespace std;
 
-//ÇÑ¹ø Á¤ÇØÁö¸é Àý´ë ¹Ù²îÁö ¾Ê´Â °ªµé.
-//constantÀÇ ¾àÀÚÀÎ const¸¦ ºÙÀÓ (º¯¼ö¸¦ »ó¼öÈ­ ÇÑ´Ù°í ÇÔ.)
-//constÀ» ºÙ¿´À¸¸é ÃÊ±â°ªÀ» ¹Ýµå½Ã ÁöÁ¤ÇØ¾ß ÇÔ.
+//í•œë²ˆ ì •í•´ì§€ë©´ ì ˆëŒ€ ë°”ë€Œì§€ ì•ŠëŠ” ê°’ë“¤.
+//constantì˜ ì•½ìžì¸ constë¥¼ ë¶™ìž„ (ë³€ìˆ˜ë¥¼ ìƒìˆ˜í™” í•œë‹¤ê³  í•¨.)
+//constì„ ë¶™ì˜€ìœ¼ë©´ ì´ˆê¸°ê°’ì„ ë°˜ë“œì‹œ ì§€ì •í•´ì•¼ í•¨.
 
 const int AIR = 0;
 const int STUN = 1;
 const int POLYMORPH =2;
 const int INVINCIBLE = 3;
-//const¸¦ ºÙ¿© ¼öÁ¤ÇÒ ¼ö ¾øµµ·Ï ¾ÈÀü¼ºÀ» ³ôÀÓ
+//constë¥¼ ë¶™ì—¬ ìˆ˜ì •í•  ìˆ˜ ì—†ë„ë¡ ì•ˆì „ì„±ì„ ë†’ìž„
 
 int main()
 {
    unsigned char flag;
-   // 0b 0000 [¹«Àû] [º¯ÀÌ] [½ºÅÏ] [°øÁßºÎ¾ç]
+   // 0b 0000 [ë¬´ì ] [ë³€ì´] [ìŠ¤í„´] [ê³µì¤‘ë¶€ì–‘]
 
-   /*¹«Àû »óÅÂ·Î ¸¸µç´Ù.*/
+   /*ë¬´ì  ìƒíƒœë¡œ ë§Œë“ ë‹¤.*/
    flag = (1 << INVINCIBLE); // flag = 0b1000
-   //(1 << 3) ÇüÅÂ´Â ÇÏµå ÄÚµù ÇüÅÂÀÌ´Ù. ³ªÁß¿¡ BitFlag°¡ Áõ°¡ÇÏ¸é ±×¿¡ ¸Â°Ô ÀÌµ¿ÇÏ´Â ¼ö°¡ ¹Ù²î¾î¾ß ÇÑ´Ù.
-   //(1 << INVINCIBLE) ÇüÅÂ·Î ÇÏ¿© ÃÑ°ýÀûÀ¸·Î °ü¸® °¡´ÉÇÏµµ·Ï ¸¸µç´Ù.
-   //INVINCIBLE´Â »ó¼ö·Î ¸Þ¸ð¸®¿¡ ÇÒ´çµÇÁö ¾Ê°í ÄÄÆÄÀÏ·¯°¡ »ó¼ö À§Ä¡¿¡ 3À» ´ëÀÔ½ÃÅ²´Ù. -> ÄÄÆÄÀÏ·¯¸¶´Ù ´Ù¸§.
+   //(1 << 3) í˜•íƒœëŠ” í•˜ë“œ ì½”ë”© í˜•íƒœì´ë‹¤. ë‚˜ì¤‘ì— BitFlagê°€ ì¦ê°€í•˜ë©´ ê·¸ì— ë§žê²Œ ì´ë™í•˜ëŠ” ìˆ˜ê°€ ë°”ë€Œì–´ì•¼ í•œë‹¤.
+   //(1 << INVINCIBLE) í˜•íƒœë¡œ í•˜ì—¬ ì´ê´„ì ìœ¼ë¡œ ê´€ë¦¬ ê°€ëŠ¥í•˜ë„ë¡ ë§Œë“ ë‹¤.
+   //INVINCIBLEëŠ” ìƒìˆ˜ë¡œ ë©”ëª¨ë¦¬ì— í• ë‹¹ë˜ì§€ ì•Šê³  ì»´íŒŒì¼ëŸ¬ê°€ ìƒìˆ˜ ìœ„ì¹˜ì— 3ì„ ëŒ€ìž…ì‹œí‚¨ë‹¤. -> ì»´íŒŒì¼ëŸ¬ë§ˆë‹¤ ë‹¤ë¦„.
 
-   /*º¯ÀÌ »óÅÂ¸¦ Ãß°¡ÇÑ´Ù (¹«Àû + º¯ÀÌ)*/
+   /*ë³€ì´ ìƒíƒœë¥¼ ì¶”ê°€í•œë‹¤ (ë¬´ì  + ë³€ì´)*/
    flag = (1 << POLYMORPH); // flag = 0b1000 + 0b0100 = 0b1100
 
-   // ¹«ÀûÀÎÁö È®ÀÎÇÏ°í ½Í´Ù(´Ù¸¥ »óÅÂ´Â °ü½É ¾øÀ½)
-   // bitmask¸¦ »ç¿ëÇÑ´Ù. -> ÇÊ¿äÇÑ bit¸¸ ÃßÃâÇØ¼­ »ç¿ë.
+   // ë¬´ì ì¸ì§€ í™•ì¸í•˜ê³  ì‹¶ë‹¤(ë‹¤ë¥¸ ìƒíƒœëŠ” ê´€ì‹¬ ì—†ìŒ)
+   // bitmaskë¥¼ ì‚¬ìš©í•œë‹¤. -> í•„ìš”í•œ bitë§Œ ì¶”ì¶œí•´ì„œ ì‚¬ìš©.
    bool invincible = ((flag & (1 << INVINCIBLE) != 0));
    // flag (0b1100) & 1 << 3 (0b0100) = 0b0100 != 0 -> true
 
-   // ¹«ÀûÀÌ°Å³ª ½ºÅÏ»óÅÂÀÎÁö È®ÀÎÇÏ°í ½Í´Ù.
+   // ë¬´ì ì´ê±°ë‚˜ ìŠ¤í„´ìƒíƒœì¸ì§€ í™•ì¸í•˜ê³  ì‹¶ë‹¤.
    bool mask = (1 << INVINCIBLE) | (1 << STUN); // 0b1010
    bool sturnOrInvincible = ((flag & mask) != 0);
    // flag (0b1100) & mask (0b1010) -> 0b1000 != 0 -> true
