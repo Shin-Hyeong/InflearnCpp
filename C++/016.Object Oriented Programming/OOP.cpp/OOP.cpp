@@ -6,7 +6,7 @@ using namespace std;
 
 // Knight를 설계
 // - 속성 (데이터) : hp, attack, position(x, y)
-// - 기능 (동작) : Move, Attack, Die
+// - 기능 (동작) : Move, Attack, Die.
 
 // 설계도의 이름은 class로 시작한다.
 // 설계도는 메모리에 할당되지 않고 따로 선언을 하는 과정에서 메모리에 할당된다.
