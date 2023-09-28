@@ -13,9 +13,9 @@ int main ()
     // TYPE 이름[개수];
     // 배열의 크기는 상수여야한다 (Visual Studio 컴파일러 기준)
     // VScode는 상수가 아니여도 컴파일 가능.
-    int monsterCount = 10;
+    const int monsterCount = 10;
     StatInfo monsters[monsterCount];
-    
+
     // 변수는 값을 = 으로  옮길 수 있음
     int a = 10;
     int b = a;
