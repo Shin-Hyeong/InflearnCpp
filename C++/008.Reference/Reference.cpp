@@ -1,11 +1,11 @@
 #include <iostream>
 using namespace std;
 
-// Point* : 포인트 변수
-// *point : point가 가지고 있는 주소로 이동한다.
+// ! Point* : 포인트 변수
+// ! *point : point가 가지고 있는 주소로 이동한다.
 
-// Reference& : 참조 변수
-// &reference : reference변수의 주소를 가져온다.
+// ! Reference& : 참조 변수
+// ! &reference : reference변수의 주소를 가져온다.
 
 struct StatInfo
 {
