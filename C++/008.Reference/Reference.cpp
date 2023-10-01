@@ -113,7 +113,7 @@ void PrintInfoByRef(StatInfo& info)
 // testRef가 무엇을 참조한지 모르기 때문에 오류 남.
 // StatInfo& testRef = info;
 // PrintInfoByRef(testRef);
-// testRef가 info를 참조하도록 선언함. testRef는 info의 2번째 이름.
+// ! testRef가 info를 참조하도록 선언함. testRef는 info의 2번째 이름.
 // 장점 : 무조건 유요한 값을 참조하기 때문에 null crash error를 막을 수 있음.
 // 단점 : 원하는 주소값이 없을 때 nullptr(유효한 값이 아님.)를 줄 수 없음.
 
