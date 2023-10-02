@@ -118,7 +118,7 @@ int main()
     // void* pointer = malloc(sizeof(Monster))
     // Monster m2 = (Monster*)pointer; 와 같다.
     // 자료형 변수명 = new 할당할 크기
-    Monster *m2 = new Monster;
+    Monster* m2 = new Monster;
     m2->_hp = 200;
     m2->_x = 3;
     m2->_y = 2;
