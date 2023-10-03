@@ -47,7 +47,6 @@ public:
         delete _pet;
     }
 
-
 public:
     int _hp = 100;
     // 포인터가 아닌 Pet 자체를 들고 있으면

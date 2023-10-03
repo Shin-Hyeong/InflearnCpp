@@ -169,7 +169,7 @@ public:
 public:
     int _hp = 100;
     ExplicitPet _explicitPet;
-    // ImplicitPet *_ImplicitPet;
+    // ImplicitPet *_ImplicitPet
 };
 
 int main ()
