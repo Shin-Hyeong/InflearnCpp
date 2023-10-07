@@ -5,6 +5,7 @@
 // ! 상속 관계이면 #include "헤더파일"
 // ! .cpp파일에서는 그냥 #include를 하면 됨/
 class Player;
+class Field;
 
 // is - a(상속) : Game is Player? -> No
 // has - a(포함) : Game has Player? -> Ok
@@ -38,6 +39,9 @@ private:
     // Player의 용량이 커져도 Game에 영향이 없음.
     // class Player가 완성이 되지 않아도 class Game을 완성시킬 수 있음.
     Player* _player;
+
+    // Field로 진입하기 위해 Has - A
+    Field* _field;
 
 public:
 

@@ -20,6 +20,15 @@ public:
 
     }
 
+    // = 0 -> 추상함수로 만듦 -> 상속받는 모든 class는 PrintInfo를 재정의 해줘야함.
+    virtual void PrintInfo() = 0;
+
+    // 자신이 공격 받는 함수, 매개변수는 나를 공격하는 대상
+    void OnAttacked(Creature* attacker);
+
+    // 죽었는지 확인
+    bool IsDead() { return _hp <= 0; }
+
 protected:
     int _creatureType;
     int _hp;

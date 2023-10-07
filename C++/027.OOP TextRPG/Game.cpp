@@ -1,27 +1,44 @@
 #include <iostream>
 #include "Game.h"
 #include "Player.h"
+#include "Field.h"
 using namespace std;
 
-Game::Game() : _player(nullptr)
+Game::Game() : _player(nullptr), _field(nullptr)
 {
 
 }
 
 Game::~Game()
 {
+    // Game이 종료되면 player 삭제
+    if (_player != nullptr)
+        delete _player;
 
+    // Game이 종료되면 field 삭제
+    if (_field != nullptr)
+        delete _field;
 }
 
 void Game::Init()
 {
-    
+    _field = new Field;
 }
 
 void Game::Update()
 {
     if (_player == nullptr)
         CreatePlayer();
+
+    if (_player->IsDead())
+    {
+        delete _player;
+        _player = nullptr;
+        CreatePlayer();
+    }
+
+    // field에서 Monster와 Player가 싸울 수 있도록 Player의 주소를 넘김.
+    _field->Update(_player);
 }
 
 void Game::CreatePlayer()
