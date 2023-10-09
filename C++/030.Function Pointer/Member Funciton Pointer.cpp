@@ -12,10 +12,12 @@ class Knight;
 
 // 방법 1)
 // int (*fn)(int, int)
+// fn = &FunctionName;
 
 // 방법 2)
 // typedef int(FUNC_TYPE)(int, int);
 // FUNC_TYPE* fn;
+// fn = &FunctionName;
 
 // 일반적인 포인터 함수
 typedef int(*PFUNC)(int, int);
