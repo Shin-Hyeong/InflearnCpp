@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// 함수 포인터
+
 int Add(int a, int b)
 {
     return a + b;
