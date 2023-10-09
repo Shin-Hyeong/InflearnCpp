@@ -79,7 +79,7 @@ int main ()
     cout << result << endl;
 
     // int(int, int)의 주소를 가질수 잇는 포인터 변수에 int(int, int)형태인 함수의 주소를 넣음.
-    fn = Add;
+    fn = &Add;
 
     // 기본 함수포인터 문법
     result = fn(3, 5);
