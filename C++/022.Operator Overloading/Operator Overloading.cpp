@@ -73,8 +73,8 @@ public:
 
     // ++a
     // ++a -> OK
-    // ++(++a) -> No
-    // 반환값을 void에서 Position&으로 변경해줘야함.
+    // ++(++a) -> OK
+    // ++(++a)이 되는 것은 (++a)의 반환값이 자기자신을 참조를 반환해줌 -> Position&
     Position& operator++()
     {   
         _x++;
@@ -86,7 +86,7 @@ public:
     // a++
     // a++ -> OK
     // (a++)++ -> No
-    // 반환값을 void에서 Position으로 변경해줘야함
+    // (a++)++이 안되는 것 (a++)가 복사된 값을 반환해주기 때문 -> Position
     // Position&를 붙이면 ret가 값을 복사해서 전달하는게 아니라 주소를 넘기게 됨.
     // 주소는 지역변수이기 때문에 operator++를 벗어나는 순간 사라짐.
     Position operator++(int)
