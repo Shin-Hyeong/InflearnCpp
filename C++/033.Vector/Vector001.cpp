@@ -6,6 +6,8 @@ using namespace std;
 // 프로그램할 때 필요한 자료구조/알고리즘등를 템플릿으로 제공하는 라이브러리
 
 // 컨테이너(Container) : 데이터를 저장하는 객체 (자료구조 Data Structure)
+// - 시퀀스 컨테이너(Sequence Container) : 데이터가 삽입 순서대로 나열되는 형태의 컨테이너
+// - vector(동적 배열), list(이중 연결 리스트), deque(double-ended- queue(양방향 큐), 데크)
 
 // vector(동적 배열 - C#:List, C++:vector)
 // ! - vector의 동작 원리 (size/capacity)
