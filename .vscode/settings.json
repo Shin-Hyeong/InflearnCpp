@@ -43,6 +43,9 @@
         "typeinfo": "cpp",
         "xiosbase": "cpp",
         "xtree": "cpp",
-        "map": "cpp"
+        "map": "cpp",
+        "xutility": "cpp",
+        "xmemory": "cpp",
+        "list": "cpp"
     }
 }
