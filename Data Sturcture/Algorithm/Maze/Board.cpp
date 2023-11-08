@@ -120,8 +120,10 @@ ConsoleColor Board::GetTileColor(Pos pos)
 
     switch (tileType)
     {
+        // EMPTY 이면 GREEN
     case TileType::EMPTY:
         return ConsoleColor::GREEN;
+        // WALL 이면 RED
     case TileType::WALL:
         return ConsoleColor::RED;
     }
