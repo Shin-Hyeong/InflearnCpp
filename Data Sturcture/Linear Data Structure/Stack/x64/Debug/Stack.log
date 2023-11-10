@@ -1,0 +1,6 @@
+﻿  Stack.cpp
+D:\InflearnC++\Data Sturcture\Linear Data Structure\Stack\Stack.cpp(33,1): warning C4267: 'return': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\InflearnC++\Data Sturcture\Linear Data Structure\Stack\Stack.cpp(33,1): message : 클래스 템플릿 멤버 함수 'int Stack<int,std::list<int,std::allocator<int>>>::size(void)'을(를) 컴파일하는 중입니다.
+D:\InflearnC++\Data Sturcture\Linear Data Structure\Stack\Stack.cpp(72,11): message : 컴파일되는 함수 템플릿 인스턴스화 'int Stack<int,std::list<int,std::allocator<int>>>::size(void)'에 대한 참조를 확인하세요.
+D:\InflearnC++\Data Sturcture\Linear Data Structure\Stack\Stack.cpp(52,24): message : 컴파일되는 클래스 템플릿 인스턴스화 'Stack<int,std::list<int,std::allocator<int>>>'에 대한 참조를 확인하세요.
+  Stack.vcxproj -> D:\InflearnC++\Data Sturcture\Linear Data Structure\x64\Debug\Stack.exe
