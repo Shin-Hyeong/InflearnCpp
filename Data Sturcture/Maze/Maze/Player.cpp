@@ -82,9 +82,10 @@ void Player::Init(Board* board)
 			*/
 		}
 	}
-	/*
+	
 	stack<Pos> s;
-	for (int i = 0; i < _path.size(); i++)
+	
+	for (int i = 0; i < _path.size() - 1; i++)
 	{
 		// stack이 비어있지 않고, 최상위에 있는 위치랑 앞으로 가야할 위치가 동일한지 확인
 		// 왔던 길을 되돌아가는 중.
@@ -94,7 +95,7 @@ void Player::Init(Board* board)
 		else
 			s.push(_path[i]);
 	}
-
+	
 	// 목적지 도착
 	if (_path.empty() == false)
 		s.push(_path.back());
@@ -111,7 +112,7 @@ void Player::Init(Board* board)
 	std::reverse(path.begin(), path.end());
 	// _path로 주소 변경.
 	_path = path;
-	*/
+	
 }
 
 void Player::Update(uint64 deltaTick)
