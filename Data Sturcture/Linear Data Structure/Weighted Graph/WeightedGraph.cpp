@@ -6,10 +6,10 @@
 #include <algorithm>
 using namespace std;
 
-void CreateGraph_1();
-void CreateGraph_2();
-void CreateGraph_3();
-void CreateGraph_4();
+void CreateGraph_1(); // 정점과 간선의 정보를 하나의 vector에서 관리
+void CreateGraph_2(); // 정점과 간선의 정보를 분리하여 관리
+void CreateGraph_3(); // 정점과 간선의 정보를 분리하여 관리, 간선의 정보가 많을 경우
+void CreateGraph_4(); // 정점과 간선의 정보를 분라하여 관리, 간선의 가중치가 있을 경우
 
 int main()
 {
