@@ -1,41 +1,35 @@
-﻿#include "pch.h"
+#include "pch.h"
+#include <iostream>
 #include "ConsoleHelper.h"
 #include "Board.h"
 #include "Player.h"
-#include <ctime> // for std::time()
 
-// 전역 변수
 Board board;
 Player player;
 
 int main()
 {
-	srand(static_cast<unsigned int>(time(NULL)));
+    ::srand(static_cast<unsigned int>(time(nullptr)));
 
-	// 25 * 25짜리 board 초기화
-	// 홀수를 넣어야 벽이 생성됨
-	board.Init(25, &player);
-	player.Init(&board);
+    // board의 size 설정
+    board.Init(25, &player);
+    player.Init(&board);
 
-	uint64 lastTick = 0;
-
-	while (true)
-	{
+    uint64 lastTick = 0;
+    while (true)
+    {
 #pragma region 프레임 관리
-		// 현재 시간 카운트
-		const uint64 currentTick = ::GetTickCount64();
-		// 다음 Tick이 발생하는 때까지 시간
-		const uint64 DeltaTime = currentTick - lastTick;
-		// lastTick 업데이트
-		lastTick = currentTick;
+        const uint64 currentTick = ::GetTickCount64();
+        const uint64 deltaTick = currentTick - lastTick;
+        lastTick = currentTick;
 #pragma endregion
 
-		// 입력
+        // TODO 입력
 
-		// 로직
-		player.Tick(DeltaTime);
+        // TODO 로직
+        player.Update(deltaTick);
 
-		// 렌더링
-		board.Render();
-	}
+        // TODO 렌더링
+        board.Render();
+    }
 }

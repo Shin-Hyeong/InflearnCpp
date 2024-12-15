@@ -12,40 +12,35 @@ enum class TileType
 {
 	NONE = 0,
 	EMPTY,
-	WALL
+	WALL,
 };
-
 class Board
 {
 public:
 	Board();
 	~Board();
 
+	// 미로 사이즈 초기화, size는 홀수여야함.
 	void Init(int32 size, Player* player);
+
+	// 렌더링
 	void Render();
 
-	// 알고리즘에 의해 맵을 생성
+	// Map를 생성하는 알고리즘
 	void GenerateMap();
-
-	// 해당 Position의 Tile Color를 설정함
-	ConsoleColor SetTileColor(Pos pos);
-
-	// 해당 Position의 위치의 TileType를 가져옴
+	// pos 위치에 어떤 TileType를 가지고 있는지 확인
 	TileType GetTileType(Pos pos);
+	// pos 위치에 어떤 Color를 가져야 할지 정함.
+	ConsoleColor GetTileColor(Pos pos);
 
-	// 미로 출발점
-	Pos GetEnterPos() { return  Pos{ 1,1 }; }
-	// 미로의 도착점
+	// 미로의 시작점
+	Pos GetEnterPos() { return Pos{ 1,1 }; }
+	// 미로의 출구
 	Pos GetExitPos() { return Pos{ _size - 2, _size - 2 }; }
 
-	int32 GetSize() { return _size; }
-
 private:
-	// 맵의 최대 사이즈
 	TileType	_tile[BOARD_MAX_SIZE][BOARD_MAX_SIZE] = {};
-	// 실질적으로 사용할 맵 사이즈
 	int32		_size = 0;
-	// 맵에 참가한 player
 	Player* _player = nullptr;
 };
 
